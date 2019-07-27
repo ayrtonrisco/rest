@@ -18,4 +18,28 @@ public class UsuarioController {
     public List<Usuario> obtenerUsuarios() {
         return usuarioDAO.findAll();
     }
+
+    @GetMapping("/sleep")
+    public String pruebaSleep() {
+        try {
+            System.out.println("Inicio Sleep");
+            Thread.sleep(65000);
+            System.out.println("Fin Sleep");
+        } catch (InterruptedException ie) {
+            System.err.println("Error interruptedException");
+        }
+        return "OK";
+    }
+
+    @GetMapping("/sleep2")
+    public String pruebaSleep2() {
+        try {
+            System.out.println("Inicio Sleep");
+            Thread.sleep(10000);
+            System.out.println("Fin Sleep");
+        } catch (InterruptedException ie) {
+            System.err.println("Error interruptedException");
+        }
+        return "OK2";
+    }
 }
